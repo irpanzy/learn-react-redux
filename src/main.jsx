@@ -5,9 +5,13 @@ import App from "./App.jsx";
 import { Provider } from "react-redux";
 import { BrowserRouter, Route, Routes } from "react-router";
 import { configureStore } from "@reduxjs/toolkit";
+import { counterSlice } from "./counterSlice.js";
+import Counter from "./counter.jsx";
 
-const store = configureStore({ 
-  reducer: {}, 
+const store = configureStore({
+  reducer: {
+    counter: counterSlice.reducer,
+  },
 });
 
 createRoot(document.getElementById("root")).render(
@@ -16,6 +20,7 @@ createRoot(document.getElementById("root")).render(
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<App />} />
+          <Route path="/counter" element={<Counter />} />
         </Routes>
       </BrowserRouter>
     </Provider>
