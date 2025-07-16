@@ -6,7 +6,7 @@ import { Provider } from "react-redux";
 import { BrowserRouter, Route, Routes } from "react-router";
 import { configureStore } from "@reduxjs/toolkit";
 import { counterSlice } from "./counterSlice.js";
-import Counter from "./counter.jsx";
+import Counter from "./Counter.jsx";
 
 const store = configureStore({
   reducer: {
